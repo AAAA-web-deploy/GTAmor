@@ -11,25 +11,52 @@
   document.querySelectorAll('.desktop-gallery, .mobile-gallery').forEach(gallery => {
     const track = gallery.querySelector('.gallery-track');
     const isMobile = gallery.classList.contains('mobile-gallery');
-    let start = 0;
-    function render(animate = true) {
-      // The initial desktop artwork contains the mockup's gallery. It remains
-      // untouched until the visitor asks to see more; all additional images are
-      // retained here, including the three images from the earlier site.
-      track.classList.add('active');
-      track.replaceChildren();
-      const count = isMobile ? 1 : 3;
-      for (let i=0; i<count; i++) {
-        const [src, alt] = images[(start+i)%images.length];
-        const item = document.createElement('div'); item.className='gallery-item';
-        const img = document.createElement('img'); img.src=src; img.alt=alt; item.append(img); track.append(item);
-      }
-      if (animate && !reduce.matches && track.animate) track.animate([{opacity:.25,transform:'translateX(8px)'},{opacity:1,transform:'translateX(0)'}],{duration:260,easing:'ease-out'});
+    let order = images.slice();
+
+    function frame(src, alt) {
+      const item = document.createElement('div');
+      item.className = 'gallery-item';
+      const img = document.createElement('img');
+      img.src = src;
+      img.alt = alt;
+      item.append(img);
+      return item;
     }
-    gallery.querySelector('.gallery-prev').addEventListener('click',()=>{start=(start-1+images.length)%images.length;render()});
-    gallery.querySelector('.gallery-next').addEventListener('click',()=>{start=(start+1)%images.length;render()});
-    if(isMobile) render(false);
-    let x0=null; track.addEventListener('touchstart',e=>{x0=e.touches[0].clientX},{passive:true});
-    track.addEventListener('touchend',e=>{if(x0===null)return;const delta=e.changedTouches[0].clientX-x0;if(Math.abs(delta)>40){start=(start+(delta<0?1:-1)+images.length)%images.length;render()}x0=null},{passive:true});
+
+    function render() {
+      track.classList.add('active', 'marquee');
+      track.replaceChildren();
+      const reel = document.createElement('div');
+      reel.className = 'gallery-reel';
+      const flowing = !reduce.matches;
+      if (flowing) reel.classList.add('is-flowing');
+      const copies = flowing ? 2 : 1;
+      for (let copy = 0; copy < copies; copy++) {
+        const set = document.createElement('div');
+        set.className = 'gallery-set';
+        const frames = flowing ? order : order.slice(0, isMobile ? 1 : 3);
+        frames.forEach(([src, alt]) => set.append(frame(src, alt)));
+        reel.append(set);
+      }
+      track.append(reel);
+    }
+
+    function step(direction) {
+      if (direction > 0) order.push(order.shift());
+      else order.unshift(order.pop());
+      render();
+    }
+
+    gallery.querySelector('.gallery-prev').addEventListener('click', () => step(-1));
+    gallery.querySelector('.gallery-next').addEventListener('click', () => step(1));
+    let x0 = null;
+    track.addEventListener('touchstart', event => { x0 = event.touches[0].clientX; }, {passive: true});
+    track.addEventListener('touchend', event => {
+      if (x0 === null) return;
+      const delta = event.changedTouches[0].clientX - x0;
+      if (Math.abs(delta) > 40) step(delta < 0 ? 1 : -1);
+      x0 = null;
+    }, {passive: true});
+    render();
   });
 })();
