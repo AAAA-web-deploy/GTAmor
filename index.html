@@ -1,56 +1,40 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#25101f">
-  <meta name="description" content="Grand Theft Amor is an unofficial fan project inspired by Jason and Lucia's story in Vice City.">
-  <title>Grand Theft Amor | The City Can Wait</title>
-  <link rel="icon" type="image/svg+xml" href="assets/brand/palm-mark.svg">
-  <link rel="preload" as="image" href="assets/images/hero-balcony-embrace.png" fetchpriority="high">
-  <link rel="stylesheet" href="styles.css">
-  <script src="script.js" defer></script>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#2a1227"><meta name="description" content="Grand Theft Amor: a fan-made story inspired by Jason and Lucia.">
+  <title>Grand Theft Amor | Love on the Run</title>
+  <link rel="icon" href="assets/palm.svg" type="image/svg+xml"><link rel="stylesheet" href="styles.css"><script src="site.js" defer></script>
 </head>
 <body>
-  <a class="skip" href="#story">Skip to the story</a>
-  <header class="site-header">
-    <a class="brand" href="#top" aria-label="Grand Theft Amor, back to top"><span>GRAND THEFT AMOR</span><img src="assets/brand/palm-mark.svg" alt="" width="39" height="44"></a>
-    <nav aria-label="Main navigation"><a href="#story">THE STORY</a><a href="#token">THE TOKEN</a><a href="#community">COMMUNITY</a></nav>
-  </header>
-
-  <main id="top">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-shade"></div>
-      <div class="hero-content">
-        <h1 id="hero-title">THE CITY<br>CAN WAIT.</h1>
-        <p>Some stories are worth staying for.</p>
-        <a class="hero-button" href="#story">EXPLORE THE STORY</a>
-      </div>
-    </section>
-    <section id="story" class="statement" aria-labelledby="story-title">
-      <div class="statement-content">
-        <h2 id="story-title">IN A CITY OF CHAOS,<br>I CHOOSE YOU.</h2>
-        <div class="sun-line" aria-hidden="true"></div>
-        <p>In a city that never slows down, they find a world of their own.</p>
-      </div>
-    </section>
-    <section class="moments" aria-labelledby="moments-title">
-      <div class="heading-rule"><span aria-hidden="true"></span><h2 id="moments-title">THE MOMENTS BETWEEN</h2><span aria-hidden="true"></span></div>
-      <div class="gallery-shell">
-        <button class="gallery-arrow previous" type="button" aria-label="Previous moment" aria-controls="moment-gallery"><img src="assets/icons/arrow-left.svg" alt=""></button>
-        <div id="moment-gallery" class="gallery" aria-label="Moments between Jason and Lucia" tabindex="0">
-          <figure><img src="assets/images/gallery-01-dock.png" alt="Jason and Lucia sit close together by the water at sunset." loading="lazy"><figcaption>THE DOCK</figcaption></figure>
-          <figure><img src="assets/images/gallery-02-home.png" alt="Lucia leads Jason by the hand through their sunlit home." loading="lazy"><figcaption>THEIR HOME</figcaption></figure>
-          <figure><img src="assets/images/gallery-03-afternoon.png" alt="Lucia and Jason share a quiet moment together on a couch." loading="lazy"><figcaption>A QUIET AFTERNOON</figcaption></figure>
-        </div>
-        <button class="gallery-arrow next" type="button" aria-label="Next moment" aria-controls="moment-gallery"><img src="assets/icons/arrow-right.svg" alt=""></button>
-      </div>
-      <div class="progress" role="group" aria-label="Select a moment"><button class="dot active" data-index="0" type="button" aria-label="Show The Dock" aria-current="true"></button><button class="dot" data-index="1" type="button" aria-label="Show Their Home"></button><button class="dot" data-index="2" type="button" aria-label="Show A Quiet Afternoon"></button></div>
-    </section>
-    <section id="token" class="token-wrap" aria-label="Token information">
-      <div class="token-card"><span class="ticker">$GTA</span><div class="token-description"><h2>GRAND THEFT AMOR</h2><p>Contract coming soon</p></div></div>
-    </section>
-  </main>
-  <footer id="community"><span class="footer-line" aria-hidden="true"></span><p>An unofficial fan project.</p><span class="footer-line" aria-hidden="true"></span></footer>
-</body>
-</html>
+<a class="skip-link desktop-skip" href="#story">Skip to the story</a><a class="skip-link mobile-skip" href="#mobile-story">Skip to the story</a>
+<main>
+  <!-- The approved 1024×1536 composition is the desktop art layer. Hotspots and
+       accessible text provide real navigation; the gallery is interactive. -->
+  <div class="desktop-stage" id="top">
+    <img class="desktop-art" src="assets/approved-mockup.png" alt="" width="1024" height="1536" fetchpriority="high">
+    <div class="sr-only"><h1>Love on the Run</h1><p>In Vice City, the only certainty is each other.</p><h2>Tokenomics</h2><p>Grand Theft Amor. Ticker: GTA. Supply, network and contract to be announced.</p><h2>Our story</h2><h3>Together again</h3><p>Two lives on the edge, brought back together.</p><h3>A world of their own</h3><p>A rare peace in a city that never stops.</p><h3>The quiet moments</h3><p>Stronger together, in risk and in survival.</p><h2>The moments between</h2></div>
+    <nav class="desktop-nav" aria-label="Main navigation"><a class="nav-story" href="#story" aria-label="The story"></a><a class="nav-moments" href="#moments" aria-label="The moments"></a><a class="nav-token" href="#tokenomics" aria-label="The token"></a></nav>
+    <a class="hero-hotspot" href="#story" aria-label="Explore their story"></a>
+    <span class="anchor token-anchor" id="tokenomics"></span><span class="anchor story-anchor" id="story"></span><span class="anchor moments-anchor" id="moments"></span>
+    <div class="desktop-gallery" aria-label="The moments between">
+      <button class="gallery-prev" type="button" aria-label="Previous images">‹</button>
+      <div class="gallery-track" aria-live="polite" aria-label="Jason and Lucia moments"></div>
+      <button class="gallery-next" type="button" aria-label="Next images">›</button>
+    </div>
+    <p class="desktop-footer sr-only">An unofficial fan project.</p>
+  </div>
+  <div class="mobile-page" id="mobile-top">
+    <header class="mobile-header"><a href="#mobile-top" class="brand">GRAND THEFT AMOR <img src="assets/palm.svg" alt=""></a><nav aria-label="Mobile navigation"><a href="#mobile-story">STORY</a><a href="#mobile-moments">MOMENTS</a><a href="#mobile-tokenomics">TOKEN</a></nav></header>
+    <section class="mobile-hero"><div class="mobile-hero-copy"><p class="eyebrow">$GTA · A FAN STORY</p><h1><span>Love</span> on<br>the Run</h1><p>In Vice City, the only certainty<br>is each other.</p><a class="cta" href="#mobile-story">EXPLORE THEIR STORY</a></div></section>
+    <section class="mobile-token" id="mobile-tokenomics"><h2>Tokenomics</h2><div class="token-grid"><div><small>NAME</small><strong>Grand Theft Amor</strong></div><div><small>TICKER</small><strong>$GTA</strong></div><div><small>SUPPLY</small><strong>To be announced</strong></div></div><p>Network and contract to be announced.</p></section>
+    <div id="mobile-story" class="story-set">
+      <section class="chapter chapter-one"><div class="chapter-copy"><span>01 /</span><h2>TOGETHER<br>AGAIN</h2><p>Two lives on the edge, brought back together.</p></div></section>
+      <section class="chapter chapter-two"><div class="chapter-copy"><span>02 /</span><h2>A WORLD<br>OF THEIR<br>OWN</h2><p>A rare peace in a city that never stops.</p></div></section>
+      <section class="chapter chapter-three"><div class="chapter-copy"><span>03 /</span><h2>THE QUIET<br>MOMENTS</h2><p>Stronger together, in risk and in survival.</p></div></section>
+    </div>
+    <section class="mobile-moments" id="mobile-moments"><h2>THE MOMENTS BETWEEN</h2><div class="mobile-gallery"><button class="gallery-prev" type="button" aria-label="Previous images">‹</button><div class="gallery-track" aria-live="polite" aria-label="Jason and Lucia moments"></div><button class="gallery-next" type="button" aria-label="Next images">›</button></div></section>
+    <footer class="mobile-footer"><strong>$GTA</strong><div><span>GRAND THEFT AMOR</span><p>Launch details coming soon.</p></div><small>An unofficial fan project.</small></footer>
+  </div>
+</main>
+</body></html>
