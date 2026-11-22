@@ -22,7 +22,7 @@
 .mobile-gallery .gallery-track.marquee{scroll-snap-type:none}
 .mobile-gallery .gallery-set{gap:3cqw;padding-right:3cqw}
 .mobile-gallery .gallery-item{width:84cqw;height:100%;flex:none}
-@media(prefers-reduced-motion:no-preference){.gallery-reel.is-flowing{animation:gallery-flow 48s linear infinite}.desktop-gallery:hover .gallery-reel.is-flowing,.mobile-gallery:hover .gallery-reel.is-flowing{animation-play-state:paused}}
+@media(prefers-reduced-motion:no-preference){.gallery-reel.is-flowing{animation:gallery-flow 104s linear infinite}.desktop-gallery:hover .gallery-reel.is-flowing,.mobile-gallery:hover .gallery-reel.is-flowing{animation-play-state:paused}}
 @keyframes gallery-flow{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 @media(prefers-reduced-motion:reduce){:root{scroll-behavior:auto}*{scroll-behavior:auto!important;animation-duration:.01ms!important;transition-duration:.01ms!important}}
 @media(max-width:700px){.hero-social,.token-overlay,.desktop-stage .footer-social{display:none}}

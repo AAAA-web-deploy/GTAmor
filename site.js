@@ -5,7 +5,14 @@
     ['assets/reunion.png','Jason and Lucia reunite near the penitentiary'],
     ['assets/dock-original.png','Jason and Lucia sitting together at the dock'],
     ['assets/couch-original.png','Jason and Lucia spending a quiet afternoon together'],
-    ['assets/quiet-new.png','Jason and Lucia sharing a quiet moment on the couch']
+    ['assets/quiet-new.png','Jason and Lucia sharing a quiet moment on the couch'],
+    ['assets/dock-rescue.png','Jason supporting Lucia on a dock at night near a boat ramp'],
+    ['assets/hospital-escape.png','Jason helping Lucia through a hospital hallway'],
+    ['assets/motel-care.png','Lucia holding a cool cloth to Jason while he rests in a motel bed'],
+    ['assets/motel-recovery.png','Lucia sitting with Jason as he recovers in a motel bed'],
+    ['assets/motel-escape.png','Jason and Lucia crouched at a motel doorway, ready to leave'],
+    ['assets/visitor-center.png','Jason and Lucia walking hand in hand toward a visitor center at sunset'],
+    ['assets/balcony-jump.png','Jason and Lucia climbing over a balcony railing together']
   ];
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll('.desktop-gallery, .mobile-gallery').forEach(gallery => {
